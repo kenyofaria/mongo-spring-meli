@@ -16,7 +16,7 @@ import com.dh.mei.repository.AnuncioRepository;
 import com.dh.mei.repository.CategoriaRepository;
 
 @RestController
-@RequestMapping("anuncios")
+@RequestMapping("/anuncios")
 public class AnuncioController {
 
 	@Autowired

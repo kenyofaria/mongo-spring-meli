@@ -27,7 +27,7 @@ public class VendaService {
 		this.vendaRepository = vendaRepository;
 	}
 	
-	@CacheEvict(value="listaVendasCompleta", allEntries = true)
+	//@CacheEvict(value="listaVendasCompleta", allEntries = true)
 	public void realizaVenda(Venda venda) {
 		vendaRepository.save(venda);
 		atualizaEstoque(venda);
@@ -45,7 +45,7 @@ public class VendaService {
 		return vendaRepository.findByDataVendaBetween(dataInicial, dataFinal);
 	}
 	
-	@Cacheable(value="listaVendasCompleta")
+	//@Cacheable(value="listaVendasCompleta")
 	public Page<Venda> listagem(Pageable pageable){
 		return vendaRepository.findAll(pageable);
 	}
